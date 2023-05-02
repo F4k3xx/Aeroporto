@@ -84,11 +84,11 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return "Nome: " + nome
-                + ", Email: " + email
-                + ", Telefone: " + telefone
-                + ", Nascimento: " + nascimento
-                + ", Rg: " + rg
-                + ", Cpf: " + cpf;
+        return "\nNome: " + nome
+                + "\nEmail: " + email
+                + "\nTelefone: " + telefone
+                + "\nNascimento: " + nascimento
+                + "\nRg: " + rg
+                + "\nCpf: " + cpf;
     }
 }
