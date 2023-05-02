@@ -27,7 +27,7 @@ public class Main {
 
             System.out.println("Opção: " + opcaoViagem + " selecionada!");
 
-            System.out.println("Olá seja bem vindo à Azul Linhas Aéreas");
+            System.out.println("Olá seja bem vindo à Spagnol Linhas Aéreas");
 
             System.out.println("Insira sua cidade de origem: ");
             horario.setNumeroDoPontoDeDorigem(sc.next());
@@ -37,6 +37,8 @@ public class Main {
 
             System.out.println("Insira a data de ida: ");
             horario.setDataPartida(sdf.parse(sc.next()));
+
+            System.out.println(horario.getDataPartida());
 
             System.out.println("Insira a data para voltar: ");
             horario.setDataChegada(sdf.parse(sc.next()));
@@ -67,23 +69,52 @@ public class Main {
 
             System.out.println(horario);
 
-
         } else if (opcaoViagem == 2) {
 
             System.out.println("Opção: " + opcaoViagem + " selecionada!");
 
-            System.out.println("Olá seja bem vindo à Azul Linhas Aéreas");
+            System.out.println("Olá seja bem vindo à Spagnol Linhas Aéreas");
 
             System.out.println("Insira sua cidade de origem: ");
-            String numeroDoPontoDePartida = sc.next();
+            horario.setNumeroDoPontoDeDorigem(sc.next());
 
             System.out.println("Insira sua cidade de destino:");
-            String numeroDoPontoDeDesetino = sc.next();
+            horario.setNumeroDoPontoDeDestino(sc.next());
 
             System.out.println("Insira a data de ida: ");
-            Date dataDeIda = sdf.parse(sc.next());
+            horario.setDataPartida(sdf.parse(sc.next()));
+
+            System.out.println("Selecione a classe do voo que deseja:");
+            System.out.println("1.Econômica\n2.Premium economy\n3.Executiva/Business\n4.Primeira Classe");
+            int opcao = sc.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    horario.setClasseVoo("Econômica");
+                    break;
+
+                case 2:
+                    horario.setClasseVoo("Premium economy");
+                    break;
+
+                case 3:
+                    horario.setClasseVoo("Executiva/Business");
+                    break;
+
+                case 4:
+                    horario.setClasseVoo("Primeira Classe");
+                    break;
+
+                default:
+                    System.out.println("Opção selecionada Invalid");
+            }
+
+            System.out.println(horario);
+
         } else {
+
             System.out.println("Selecione novamente!");
+
         }
 
         //Inserir dados Pessoa

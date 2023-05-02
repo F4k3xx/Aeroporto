@@ -1,5 +1,6 @@
 package br.com.fag.entities;
 
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class Horario{
@@ -64,10 +65,17 @@ public class Horario{
 
     @Override
     public String toString(){
-        return "Cidade de Origem: " + numeroDoPontoDeDorigem
-                + "\nCidade de Destino: " + numeroDoPontoDeDestino
-                + "\nDataPartida: " + dataPartida
-                + "\nDataChegada: " + dataChegada
-                + "\nClasseVoo: " + ClasseVoo;
+        if(dataChegada != null) {
+            return "Cidade de Origem: " + numeroDoPontoDeDorigem
+                    + "\nCidade de Destino: " + numeroDoPontoDeDestino
+                    + "\nDataPartida: " + dataPartida
+                    + "\nDataChegada: " + dataChegada
+                    + "\nClasseVoo: " + ClasseVoo;
+        }else {
+            return "Cidade de Origem: " + numeroDoPontoDeDorigem
+                    + "\nCidade de Destino: " + numeroDoPontoDeDestino
+                    + "\nDataPartida: " + dataPartida
+                    + "\nClasseVoo: " + ClasseVoo;
+        }
     }
 }
