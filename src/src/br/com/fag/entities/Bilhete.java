@@ -1,17 +1,18 @@
 package br.com.fag.entities;
 
-import java.util.Date;
-
 public class Bilhete {
 
-    private int numeor;
+    private int numero;
     private int assento;
     private int passagero;
-    private Date horario;
+    private Horario horario;
     private String situacao;
 
-    public Bilhete(int numeor, int assento, int passagero, Date horario, String situacao) {
-        this.numeor = numeor;
+    public Bilhete() {
+    }
+
+    public Bilhete(int numero, int assento, int passagero, Horario horario, String situacao) {
+        this.numero = numero;
         this.assento = assento;
         this.passagero = passagero;
         this.horario = horario;
@@ -19,11 +20,11 @@ public class Bilhete {
     }
 
     public int getNumeor() {
-        return numeor;
+        return numero;
     }
 
-    public void setNumeor(int numeor) {
-        this.numeor = numeor;
+    public void setNumeor(int numero) {
+        this.numero = numero;
     }
 
     public int getAssento() {
@@ -42,11 +43,11 @@ public class Bilhete {
         this.passagero = passagero;
     }
 
-    public Date getHorario() {
+    public Horario getHorario() {
         return horario;
     }
 
-    public void setHorario(Date horario) {
+    public void setHorario(Horario horario) {
         this.horario = horario;
     }
 

@@ -2,7 +2,7 @@ package br.com.fag.entities;
 
 public class Aviao {
 
-    private int codigo;
+    private Long codigo;
     private Double carga;
     private int quantidadeEconomica;
     private int qunatidadeExecutiva;
@@ -11,20 +11,12 @@ public class Aviao {
     public Aviao() {
     }
 
-    public Aviao(int codigo, Double carga, int quantidadeEconomica, int qunatidadeExecutiva, int quantidadePrimeira) {
+    public Aviao(Long codigo, Double carga, int quantidadeEconomica, int qunatidadeExecutiva, int quantidadePrimeira) {
         this.codigo = codigo;
         this.carga = carga;
         this.quantidadeEconomica = quantidadeEconomica;
         this.qunatidadeExecutiva = qunatidadeExecutiva;
         this.quantidadePrimeira = quantidadePrimeira;
-    }
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
     }
 
     public Double getCarga() {

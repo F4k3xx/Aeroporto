@@ -2,24 +2,16 @@ package br.com.fag.entities;
 
 public class Aeroporto {
 
-    private int codigo;
+    private Long codigo;
     private double carga;
     private String sigla;
     private Endereco endereco;
 
-    public Aeroporto(int codigo, double carga, String sigla, Endereco endereco) {
+    public Aeroporto(Long codigo, double carga, String sigla, Endereco endereco) {
         this.codigo = codigo;
         this.carga = carga;
         this.sigla = sigla;
         this.endereco = endereco;
-    }
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
     }
 
     public double getCarga() {

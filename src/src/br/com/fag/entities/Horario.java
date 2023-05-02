@@ -4,27 +4,22 @@ import java.util.Date;
 
 public class Horario{
 
-    private int codigo;
+    private Long codigo;
+    private String numeroDoPontoDeDorigem;
+    private String numeroDoPontoDeDestino;
     private Date dataPartida;
     private  Date dataChegada;
-    private Date ClasseVoo;
+    private String ClasseVoo;
 
     public Horario() {
     }
 
-    public Horario(int codigo, Date dataPartida, Date dataChegada, Date classeVoo) {
-        this.codigo = codigo;
+    public Horario(String numeroDoPontoDeDorigem, String numeroDoPontoDeDestino, Date dataPartida, Date dataChegada, String classeVoo) {
+        this.numeroDoPontoDeDorigem = numeroDoPontoDeDorigem;
+        this.numeroDoPontoDeDestino = numeroDoPontoDeDestino;
         this.dataPartida = dataPartida;
         this.dataChegada = dataChegada;
         ClasseVoo = classeVoo;
-    }
-
-    public int getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
     }
 
     public Date getDataPartida() {
@@ -43,11 +38,36 @@ public class Horario{
         this.dataChegada = dataChegada;
     }
 
-    public Date getClasseVoo() {
+    public String getClasseVoo() {
         return ClasseVoo;
     }
 
-    public void setClasseVoo(Date classeVoo) {
+    public void setClasseVoo(String classeVoo) {
         ClasseVoo = classeVoo;
+    }
+
+    public String getNumeroDoPontoDeDorigem() {
+        return numeroDoPontoDeDorigem;
+    }
+
+    public void setNumeroDoPontoDeDorigem(String numeroDoPontoDeDorigem) {
+        this.numeroDoPontoDeDorigem = numeroDoPontoDeDorigem;
+    }
+
+    public String getNumeroDoPontoDeDestino() {
+        return numeroDoPontoDeDestino;
+    }
+
+    public void setNumeroDoPontoDeDestino(String numeroDoPontoDeDestino) {
+        this.numeroDoPontoDeDestino = numeroDoPontoDeDestino;
+    }
+
+    @Override
+    public String toString(){
+        return "Cidade de Origem: " + numeroDoPontoDeDorigem
+                + "\nCidade de Destino: " + numeroDoPontoDeDestino
+                + "\nDataPartida: " + dataPartida
+                + "\nDataChegada: " + dataChegada
+                + "\nClasseVoo: " + ClasseVoo;
     }
 }

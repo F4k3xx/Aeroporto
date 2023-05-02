@@ -1,7 +1,6 @@
 package main;
 
 import br.com.fag.entities.*;
-import telaInicial.TelaInicial;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -13,33 +12,78 @@ public class Main {
 
     public static void main(String[] args) throws ParseException {
 
-        TelaInicial iniciarPrograma = new TelaInicial();
-
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-        System.out.println("Digite o ponto de partida: \n1.França\n2.EUA\n3.Itália\n4.Inglaterra\n5.Japão ");
+        Bilhete bilhete = new Bilhete();
+        Horario horario = new Horario();
 
-        System.out.println("Digite o destino: \n1.França\n2.EUA\n3.Itália\n4.Inglaterra\n5.Japão ");
-        int opcao = sc.nextInt();
+        System.out.println("Selecione a opção desejada:");
+        System.out.println("1.Ida e Volta\n2.Só Ida");
+        int opcaoViagem = sc.nextInt();
 
-        switch (opcao){
-            case 1:
-                System.out.println("O número escolhido foi: 1.");
-                break;
-            case 2:
-                System.out.println("O número escolhido foi: 2.");
-                break;
-            case 3:
-                System.out.println("O número escolhido foi: 3.");
-                break;
-            case 4:
-                System.out.println("O número escolhido foi: 4.");
-                break;
-            case 5:
-                System.out.println("O número escolhido foi: 5.");
-                break;
+        if (opcaoViagem == 1) {
+
+            System.out.println("Opção: " + opcaoViagem + " selecionada!");
+
+            System.out.println("Olá seja bem vindo à Azul Linhas Aéreas");
+
+            System.out.println("Insira sua cidade de origem: ");
+            horario.setNumeroDoPontoDeDorigem(sc.next());
+
+            System.out.println("Insira sua cidade de destino:");
+            horario.setNumeroDoPontoDeDestino(sc.next());
+
+            System.out.println("Insira a data de ida: ");
+            horario.setDataPartida(sdf.parse(sc.next()));
+
+            System.out.println("Insira a data para voltar: ");
+            horario.setDataChegada(sdf.parse(sc.next()));
+
+            System.out.println("Selecione a classe do voo que deseja:");
+            System.out.println("1.Econômica\n2.Premium economy\n3.Executiva/Business\n4.Primeira Classe");
+            int opcao = sc.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    horario.setClasseVoo("Econômica");
+                    break;
+
+                case 2:
+                    horario.setClasseVoo("Premium economy");
+                    break;
+
+                case 3:
+                    horario.setClasseVoo("Executiva/Business");
+                    break;
+
+                case 4:
+                    horario.setClasseVoo("Primeira Classe");
+
+                default:
+                    System.out.println("Opção selecionada Invalid");
+            }
+
+            System.out.println(horario);
+
+
+        } else if (opcaoViagem == 2) {
+
+            System.out.println("Opção: " + opcaoViagem + " selecionada!");
+
+            System.out.println("Olá seja bem vindo à Azul Linhas Aéreas");
+
+            System.out.println("Insira sua cidade de origem: ");
+            String numeroDoPontoDePartida = sc.next();
+
+            System.out.println("Insira sua cidade de destino:");
+            String numeroDoPontoDeDesetino = sc.next();
+
+            System.out.println("Insira a data de ida: ");
+            Date dataDeIda = sdf.parse(sc.next());
+        } else {
+            System.out.println("Selecione novamente!");
         }
 
         //Inserir dados Pessoa
@@ -73,15 +117,9 @@ public class Main {
 
         Pessoa pessoa = new Pessoa(name, email, telefone, nascimento, rg, cpf, endereco);
 
-        Aviao aviao = new Aviao();
-
-        Horario horario = new Horario();
-
-
-
-
-        System.out.println(endereco);
         System.out.println(pessoa);
+        System.out.println(endereco);
+
 
     }
 }
