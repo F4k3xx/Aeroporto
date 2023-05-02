@@ -4,14 +4,11 @@ public class Bilhete {
 
     private int numero;
     private int assento;
-    private int passagero;
+    private Passageiro passagero;
     private Horario horario;
-    private String situacao;
+    private SituaçãoBilete situacao;
 
-    public Bilhete() {
-    }
-
-    public Bilhete(int numero, int assento, int passagero, Horario horario, String situacao) {
+    public Bilhete(int numero, int assento, Passageiro passagero, Horario horario, SituaçãoBilete situacao) {
         this.numero = numero;
         this.assento = assento;
         this.passagero = passagero;
@@ -19,11 +16,11 @@ public class Bilhete {
         this.situacao = situacao;
     }
 
-    public int getNumeor() {
+    public int getNumero() {
         return numero;
     }
 
-    public void setNumeor(int numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
 
@@ -35,11 +32,11 @@ public class Bilhete {
         this.assento = assento;
     }
 
-    public int getPassagero() {
+    public Passageiro getPassagero() {
         return passagero;
     }
 
-    public void setPassagero(int passagero) {
+    public void setPassagero(Passageiro passagero) {
         this.passagero = passagero;
     }
 
@@ -51,13 +48,17 @@ public class Bilhete {
         this.horario = horario;
     }
 
-    public String getSituacao() {
+    public SituaçãoBilete getSituacao() {
         return situacao;
     }
 
-    public void setSituacao(String situacao) {
+    public void setSituacao(SituaçãoBilete situacao) {
         this.situacao = situacao;
     }
+
+    public Bilhete() {
+    }
+
 
     public void reservar(Passageiro passageiro){
 

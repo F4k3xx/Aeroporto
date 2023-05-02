@@ -5,9 +5,9 @@ public class Bagagem {
     private Long codigo;
     private String tipo;
     private Double peso;
-    private String bilhete;
+    private Bilhete bilhete;
 
-    public Bagagem(Long codigo, String tipo, Double peso, String bilhete) {
+    public Bagagem(Long codigo, String tipo, Double peso, Bilhete bilhete) {
         this.codigo = codigo;
         this.tipo = tipo;
         this.peso = peso;
@@ -38,11 +38,11 @@ public class Bagagem {
         this.peso = peso;
     }
 
-    public String getBilhete() {
+    public Bilhete getBilhete() {
         return bilhete;
     }
 
-    public void setBilhete(String bilhete) {
+    public void setBilhete(Bilhete bilhete) {
         this.bilhete = bilhete;
     }
 }

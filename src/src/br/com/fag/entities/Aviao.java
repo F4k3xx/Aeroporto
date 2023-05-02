@@ -4,14 +4,14 @@ public class Aviao {
 
     private Long codigo;
     private Double carga;
-    private int quantidadeEconomica;
-    private int qunatidadeExecutiva;
-    private int quantidadePrimeira;
+    private Horario quantidadeEconomica;
+    private Horario qunatidadeExecutiva;
+    private Horario quantidadePrimeira;
 
     public Aviao() {
     }
 
-    public Aviao(Long codigo, Double carga, int quantidadeEconomica, int qunatidadeExecutiva, int quantidadePrimeira) {
+    public Aviao(Long codigo, Double carga, Horario quantidadeEconomica, Horario qunatidadeExecutiva, Horario quantidadePrimeira) {
         this.codigo = codigo;
         this.carga = carga;
         this.quantidadeEconomica = quantidadeEconomica;
@@ -27,27 +27,27 @@ public class Aviao {
         this.carga = carga;
     }
 
-    public int getQuantidadeEconomica() {
+    public Horario getQuantidadeEconomica() {
         return quantidadeEconomica;
     }
 
-    public void setQuantidadeEconomica(int quantidadeEconomica) {
+    public void setQuantidadeEconomica(Horario quantidadeEconomica) {
         this.quantidadeEconomica = quantidadeEconomica;
     }
 
-    public int getQunatidadeExecutiva() {
+    public Horario getQunatidadeExecutiva() {
         return qunatidadeExecutiva;
     }
 
-    public void setQunatidadeExecutiva(int qunatidadeExecutiva) {
+    public void setQunatidadeExecutiva(Horario qunatidadeExecutiva) {
         this.qunatidadeExecutiva = qunatidadeExecutiva;
     }
 
-    public int getQuantidadePrimeira() {
+    public Horario getQuantidadePrimeira() {
         return quantidadePrimeira;
     }
 
-    public void setQuantidadePrimeira(int quantidadePrimeira) {
+    public void setQuantidadePrimeira(Horario quantidadePrimeira) {
         this.quantidadePrimeira = quantidadePrimeira;
     }
 }

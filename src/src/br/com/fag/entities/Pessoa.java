@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Pessoa {
 
-    protected Long codigo;
+    private Long codigo;
     private String nome;
     private String email;
     private String telefone;
@@ -16,7 +16,7 @@ public class Pessoa {
     public Pessoa() {
     }
 
-    public Pessoa(String nome, String email, String telefone, Date nascimento, String rg, String cpf, Endereco endereco) {
+    public Pessoa(Long codigo, String nome, String email, String telefone, Date nascimento, String rg, String cpf, Endereco endereco) {
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;

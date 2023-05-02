@@ -115,11 +115,18 @@ public class Main {
 
         Endereco endereco = new Endereco(logradouro, bairro, cidade, estado, pais);
 
-        Pessoa pessoa = new Pessoa(name, email, telefone, nascimento, rg, cpf, endereco);
+        Pessoa pessoa = new Pessoa(11L, name, email, telefone, nascimento, rg, cpf, endereco);
 
         System.out.println(pessoa);
         System.out.println(endereco);
 
+        Passageiro passageiro = new Passageiro();
+        passageiro.setCodigo(1L);
+        passageiro.setPassaporte("2234234234-BR");
+        passageiro.setCpf(cpf);
 
+
+        bilhete.setPassagero(passageiro);
+        System.out.println(passageiro);
     }
 }

@@ -3,9 +3,9 @@ package br.com.fag.entities;
 public class CompanhiaAerea {
 
     private Long codigo;
-    private String descricao;
+    private Aviao descricao;
 
-    public CompanhiaAerea(Long codigo, String descricao) {
+    public CompanhiaAerea(Long codigo, Aviao descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
     }
@@ -18,11 +18,11 @@ public class CompanhiaAerea {
         this.codigo = codigo;
     }
 
-    public String getDescricao() {
+    public Aviao getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
+    public void setDescricao(Aviao descricao) {
         this.descricao = descricao;
     }
 
