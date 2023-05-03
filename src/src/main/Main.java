@@ -35,11 +35,11 @@ public class Main {
             System.out.println("Insira sua cidade de destino:");
             horario.setNumeroDoPontoDeDestino(sc.next());
 
+            //Insirir a data de acordo com o formato!
             System.out.println("Insira a data de ida: ");
             horario.setDataPartida(sdf.parse(sc.next()));
 
-            System.out.println(horario.getDataPartida());
-
+            //Insirir a data de acordo com o formato!
             System.out.println("Insira a data para voltar: ");
             horario.setDataChegada(sdf.parse(sc.next()));
 
@@ -80,7 +80,7 @@ public class Main {
 
             System.out.println("Insira sua cidade de destino:");
             horario.setNumeroDoPontoDeDestino(sc.next());
-
+            //Insirir a data de acordo com o formato!
             System.out.println("Insira a data de ida: ");
             horario.setDataPartida(sdf.parse(sc.next()));
 
@@ -125,6 +125,7 @@ public class Main {
         String email = sc.next();
         System.out.print("Telefone: ");
         String telefone = sc.next();
+        //Insirir a data de acordo com o formato!
         System.out.print("Birth date (DD/MM/YYYY): ");
         Date nascimento = sdf.parse(sc.next());
         System.out.print("Rg: ");
@@ -144,20 +145,12 @@ public class Main {
         System.out.println("Pais; ");
         String pais = sc.next();
 
-        Endereco endereco = new Endereco(logradouro, bairro, cidade, estado, pais);
+
+        Endereco endereco = new Endereco(1L, logradouro, bairro, cidade, estado, pais);
 
         Pessoa pessoa = new Pessoa(11L, name, email, telefone, nascimento, rg, cpf, endereco);
 
         System.out.println(pessoa);
-        System.out.println(endereco);
 
-        Passageiro passageiro = new Passageiro();
-        passageiro.setCodigo(1L);
-        passageiro.setPassaporte("2234234234-BR");
-        passageiro.setCpf(cpf);
-
-
-        bilhete.setPassagero(passageiro);
-        System.out.println(passageiro);
     }
 }

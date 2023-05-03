@@ -1,5 +1,6 @@
 package br.com.fag.entities;
 
+import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
@@ -9,18 +10,33 @@ public class Horario{
     private String numeroDoPontoDeDorigem;
     private String numeroDoPontoDeDestino;
     private Date dataPartida;
-    private  Date dataChegada;
+    private Date dataChegada;
     private String ClasseVoo;
 
     public Horario() {
     }
 
-    public Horario(String numeroDoPontoDeDorigem, String numeroDoPontoDeDestino, Date dataPartida, Date dataChegada, String classeVoo) {
+    public Horario(Long codigo, String numeroDoPontoDeDorigem, String numeroDoPontoDeDestino, Date dataPartida, Date dataChegada, String classeVoo) {
+        this.codigo = codigo;
         this.numeroDoPontoDeDorigem = numeroDoPontoDeDorigem;
         this.numeroDoPontoDeDestino = numeroDoPontoDeDestino;
         this.dataPartida = dataPartida;
         this.dataChegada = dataChegada;
         ClasseVoo = classeVoo;
+    }
+
+    public String dataPartidaformatacao() {
+        String dataPartidaFormat = new SimpleDateFormat("yyyy-MM-dd").format(this.dataPartida);
+        return dataPartidaFormat;
+    }
+
+    public String dataChegadaformatacao() {
+        String dataChegadaFormat = new SimpleDateFormat("yyyy-MM-dd").format(this.dataChegada);
+        return dataChegadaFormat;
+    }
+
+    public Long getCodigo() {
+        return codigo;
     }
 
     public Date getDataPartida() {
@@ -68,13 +84,13 @@ public class Horario{
         if(dataChegada != null) {
             return "Cidade de Origem: " + numeroDoPontoDeDorigem
                     + "\nCidade de Destino: " + numeroDoPontoDeDestino
-                    + "\nDataPartida: " + dataPartida
-                    + "\nDataChegada: " + dataChegada
+                    + "\nDataPartida: " + dataPartidaformatacao()
+                    + "\nDataChegada: " + dataChegadaformatacao()
                     + "\nClasseVoo: " + ClasseVoo;
         }else {
             return "Cidade de Origem: " + numeroDoPontoDeDorigem
                     + "\nCidade de Destino: " + numeroDoPontoDeDestino
-                    + "\nDataPartida: " + dataPartida
+                    + "\nDataPartida: " + dataPartidaformatacao()
                     + "\nClasseVoo: " + ClasseVoo;
         }
     }

@@ -12,12 +12,17 @@ public class Endereco {
     public Endereco() {
     }
 
-    public Endereco(String logradouro, String bairro, String cidade, String estado, String pais) {
+    public Endereco(Long codigo, String logradouro, String bairro, String cidade, String estado, String pais) {
+        this.codigo = codigo;
         this.logradouro = logradouro;
         this.bairro = bairro;
         this.cidade = cidade;
         this.estado = estado;
         this.pais = pais;
+    }
+
+    public Long getCodigo() {
+        return codigo;
     }
 
     public String getLogradouro() {
@@ -69,5 +74,4 @@ public class Endereco {
                 + "\nEstado: " + estado
                 + "\nPais: " + pais;
     }
-
 }

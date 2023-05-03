@@ -1,5 +1,6 @@
 package br.com.fag.entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Pessoa {
@@ -17,6 +18,7 @@ public class Pessoa {
     }
 
     public Pessoa(Long codigo, String nome, String email, String telefone, Date nascimento, String rg, String cpf, Endereco endereco) {
+        this.codigo = codigo;
         this.nome = nome;
         this.email = email;
         this.telefone = telefone;
@@ -24,6 +26,15 @@ public class Pessoa {
         this.rg = rg;
         this.cpf = cpf;
         this.endereco = endereco;
+    }
+
+    public String datanas() {
+        String datanasFormt = new SimpleDateFormat("yyyy-MM-dd").format(this.nascimento);
+        return datanasFormt;
+    }
+
+    public Long getCodigo() {
+        return codigo;
     }
 
     public String getNome() {
@@ -87,8 +98,9 @@ public class Pessoa {
         return "\nNome: " + nome
                 + "\nEmail: " + email
                 + "\nTelefone: " + telefone
-                + "\nNascimento: " + nascimento
+                + "\nNascimento: " + datanas()
                 + "\nRg: " + rg
-                + "\nCpf: " + cpf;
+                + "\nCpf: " + cpf
+                + "\nEndereco: " + endereco;
     }
 }
