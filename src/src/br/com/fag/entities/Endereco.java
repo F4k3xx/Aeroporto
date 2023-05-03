@@ -1,5 +1,9 @@
 package br.com.fag.entities;
 
+import java.text.SimpleDateFormat;
+import java.util.Locale;
+import java.util.Scanner;
+
 public class Endereco {
 
     private Long codigo;
@@ -19,6 +23,26 @@ public class Endereco {
         this.cidade = cidade;
         this.estado = estado;
         this.pais = pais;
+    }
+
+    public void dadosEndereco(Endereco endereco) {
+
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+        //Inserir dados Endereço
+        System.out.println("Logradouro: ");
+        endereco.setLogradouro(sc.next());
+        System.out.println("Bairro: ");
+        endereco.setBairro(sc.next());
+        System.out.println("Cidade: ");
+        endereco.setCidade(sc.next());
+        System.out.println("Estado: ");
+        endereco.setEstado(sc.next());
+        System.out.println("Pais; ");
+        endereco.setPais(sc.next());
+        System.out.println(this);
     }
 
     public Long getCodigo() {
@@ -64,7 +88,6 @@ public class Endereco {
     public void setPais(String pais) {
         this.pais = pais;
     }
-
 
     @Override
     public String toString() {

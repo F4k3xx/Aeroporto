@@ -1,8 +1,11 @@
 package br.com.fag.entities;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Locale;
+import java.util.Scanner;
 
 public class Horario{
 

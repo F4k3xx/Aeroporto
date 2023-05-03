@@ -2,6 +2,8 @@ package br.com.fag.entities;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
+import java.util.Scanner;
 
 public class Pessoa {
 
@@ -41,7 +43,7 @@ public class Pessoa {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome() {
         this.nome = nome;
     }
 
@@ -49,7 +51,7 @@ public class Pessoa {
         return email;
     }
 
-    public void setEmail(String email) {
+    public void setEmail() {
         this.email = email;
     }
 
@@ -57,7 +59,7 @@ public class Pessoa {
         return telefone;
     }
 
-    public void setTelefone(String telefone) {
+    public void setTelefone() {
         this.telefone = telefone;
     }
 
@@ -65,7 +67,7 @@ public class Pessoa {
         return nascimento;
     }
 
-    public void setNascimento(Date nascimento) {
+    public void setNascimento() {
         this.nascimento = nascimento;
     }
 
@@ -73,7 +75,7 @@ public class Pessoa {
         return rg;
     }
 
-    public void setRg(String rg) {
+    public void setRg() {
         this.rg = rg;
     }
 
@@ -81,7 +83,7 @@ public class Pessoa {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf() {
         this.cpf = cpf;
     }
 

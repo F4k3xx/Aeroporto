@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class Main {
 
+
     public static void main(String[] args) throws ParseException {
 
         Locale.setDefault(Locale.US);
@@ -18,6 +19,7 @@ public class Main {
 
         Bilhete bilhete = new Bilhete();
         Horario horario = new Horario();
+
 
         System.out.println("Selecione a opção desejada:");
         System.out.println("1.Ida e Volta\n2.Só Ida");
@@ -29,18 +31,18 @@ public class Main {
 
             System.out.println("Olá seja bem vindo à Spagnol Linhas Aéreas");
 
-            System.out.println("Insira sua cidade de origem: ");
+            System.out.print("Insira sua cidade de origem: ");
             horario.setNumeroDoPontoDeDorigem(sc.next());
 
-            System.out.println("Insira sua cidade de destino:");
+            System.out.print("Insira sua cidade de destino:");
             horario.setNumeroDoPontoDeDestino(sc.next());
 
             //Insirir a data de acordo com o formato!
-            System.out.println("Insira a data de ida: ");
+            System.out.print("Insira a data de ida: ");
             horario.setDataPartida(sdf.parse(sc.next()));
 
             //Insirir a data de acordo com o formato!
-            System.out.println("Insira a data para voltar: ");
+            System.out.print("Insira a data para voltar: ");
             horario.setDataChegada(sdf.parse(sc.next()));
 
             System.out.println("Selecione a classe do voo que deseja:");
@@ -66,8 +68,8 @@ public class Main {
                 default:
                     System.out.println("Opção selecionada Invalid");
             }
-
             System.out.println(horario);
+
 
         } else if (opcaoViagem == 2) {
 
@@ -75,13 +77,13 @@ public class Main {
 
             System.out.println("Olá seja bem vindo à Spagnol Linhas Aéreas");
 
-            System.out.println("Insira sua cidade de origem: ");
+            System.out.print("Insira sua cidade de origem: ");
             horario.setNumeroDoPontoDeDorigem(sc.next());
 
-            System.out.println("Insira sua cidade de destino:");
+            System.out.print("Insira sua cidade de destino:");
             horario.setNumeroDoPontoDeDestino(sc.next());
             //Insirir a data de acordo com o formato!
-            System.out.println("Insira a data de ida: ");
+            System.out.print("Insira a data de ida: ");
             horario.setDataPartida(sdf.parse(sc.next()));
 
             System.out.println("Selecione a classe do voo que deseja:");
@@ -110,11 +112,8 @@ public class Main {
             }
 
             System.out.println(horario);
-
         } else {
-
             System.out.println("Selecione novamente!");
-
         }
 
         //Inserir dados Pessoa
@@ -134,15 +133,15 @@ public class Main {
         String cpf = sc.next();
 
         //Inserir dados Endereço
-        System.out.println("Logradouro: ");
+        System.out.print("Logradouro: ");
         String logradouro = sc.next();
-        System.out.println("Bairro: ");
+        System.out.print("Bairro: ");
         String bairro = sc.next();
-        System.out.println("Cidade: ");
+        System.out.print("Cidade: ");
         String cidade = sc.next();
-        System.out.println("Estado: ");
+        System.out.print("Estado: ");
         String estado = sc.next();
-        System.out.println("Pais; ");
+        System.out.print("Pais; ");
         String pais = sc.next();
 
 
