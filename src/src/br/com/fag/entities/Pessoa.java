@@ -28,9 +28,9 @@ public class Pessoa {
         this.endereco = endereco;
     }
 
-    public String datanas() {
-        String datanasFormt = new SimpleDateFormat("yyyy-MM-dd").format(this.nascimento);
-        return datanasFormt;
+    public String dateNascimento() {
+        String dateNascimentoFomat = new SimpleDateFormat("yyyy-MM-dd").format(this.nascimento);
+        return dateNascimentoFomat;
     }
 
     public Long getCodigo() {
@@ -98,7 +98,7 @@ public class Pessoa {
         return "\nNome: " + nome
                 + "\nEmail: " + email
                 + "\nTelefone: " + telefone
-                + "\nNascimento: " + datanas()
+                + "\nNascimento: " + dateNascimento()
                 + "\nRg: " + rg
                 + "\nCpf: " + cpf
                 + "\nEndereco: " + endereco;
