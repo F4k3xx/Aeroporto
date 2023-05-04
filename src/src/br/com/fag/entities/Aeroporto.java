@@ -3,23 +3,13 @@ package br.com.fag.entities;
 public class Aeroporto {
 
     private Long codigo;
-    private double carga;
     private String sigla;
     private Endereco endereco;
 
-    public Aeroporto(Long codigo, double carga, String sigla, Endereco endereco) {
+    public Aeroporto(Long codigo, String sigla, Endereco endereco) {
         this.codigo = codigo;
-        this.carga = carga;
         this.sigla = sigla;
         this.endereco = endereco;
-    }
-
-    public double getCarga() {
-        return carga;
-    }
-
-    public void setCarga(double carga) {
-        this.carga = carga;
     }
 
     public String getSigla() {
@@ -39,8 +29,7 @@ public class Aeroporto {
     }
 
     public String toString() {
-        return "\nCarga " + getCarga()
-                + "\nSigla " + getSigla()
+        return "\nSigla " + getSigla()
                 + "\nEndereco " + getEndereco()
                 + "\n";
     }

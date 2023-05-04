@@ -19,15 +19,23 @@ public class Main {
 
         System.out.println("Olá seja bem vindo à Spagnol Linhas Aéreas");
 
+        //Endereco Aeroporto
         Endereco enderecoAeroporto = new Endereco(22L, "Av. Itelo Webber", "Santos Dumont", "Cascavel", "Paraná", "Brasil");
-        Aeroporto aeroporto = new Aeroporto(22L, 25.0, "SIGLA", enderecoAeroporto);
+        //Aeroporo
+        Aeroporto aeroporto = new Aeroporto(22L, "SIGLA", enderecoAeroporto);
         System.out.println(aeroporto);
 
-
-
-        Bilhete bilhete = new Bilhete();
+        //Rotas
         Rota rota = new Rota();
+
+        //Horário
         Horario horario = new Horario();
+
+        //Passageiro
+        Passageiro passageiro = new Passageiro();
+
+        //Bilhete
+        Bilhete bilhete = new Bilhete();
 
 
         horario.opcaoViagem();
