@@ -18,104 +18,17 @@ public class Main {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
         Bilhete bilhete = new Bilhete();
+        Rota rota = new Rota();
         Horario horario = new Horario();
 
+        System.out.println("Olá seja bem vindo à Spagnol Linhas Aéreas");
 
-        System.out.println("Selecione a opção desejada:");
-        System.out.println("1.Ida e Volta\n2.Só Ida");
-        int opcaoViagem = sc.nextInt();
-
-        if (opcaoViagem == 1) {
-
-            System.out.println("Opção: " + opcaoViagem + " selecionada!");
-
-            System.out.println("Olá seja bem vindo à Spagnol Linhas Aéreas");
-
-            System.out.print("Insira sua cidade de origem: ");
-            horario.setNumeroDoPontoDeDorigem(sc.next());
-
-            System.out.print("Insira sua cidade de destino:");
-            horario.setNumeroDoPontoDeDestino(sc.next());
-
-            //Insirir a data de acordo com o formato!
-            System.out.print("Insira a data de ida: ");
-            horario.setDataPartida(sdf.parse(sc.next()));
-
-            //Insirir a data de acordo com o formato!
-            System.out.print("Insira a data para voltar: ");
-            horario.setDataChegada(sdf.parse(sc.next()));
-
-            System.out.println("Selecione a classe do voo que deseja:");
-            System.out.println("1.Econômica\n2.Premium economy\n3.Executiva/Business\n4.Primeira Classe");
-            int opcao = sc.nextInt();
-
-            switch (opcao) {
-                case 1:
-                    horario.setClasseVoo("Econômica");
-                    break;
-
-                case 2:
-                    horario.setClasseVoo("Premium economy");
-                    break;
-
-                case 3:
-                    horario.setClasseVoo("Executiva/Business");
-                    break;
-
-                case 4:
-                    horario.setClasseVoo("Primeira Classe");
-
-                default:
-                    System.out.println("Opção selecionada Invalid");
-            }
-            System.out.println(horario);
-
-
-        } else if (opcaoViagem == 2) {
-
-            System.out.println("Opção: " + opcaoViagem + " selecionada!");
-
-            System.out.println("Olá seja bem vindo à Spagnol Linhas Aéreas");
-
-            System.out.print("Insira sua cidade de origem: ");
-            horario.setNumeroDoPontoDeDorigem(sc.next());
-
-            System.out.print("Insira sua cidade de destino:");
-            horario.setNumeroDoPontoDeDestino(sc.next());
-            //Insirir a data de acordo com o formato!
-            System.out.print("Insira a data de ida: ");
-            horario.setDataPartida(sdf.parse(sc.next()));
-
-            System.out.println("Selecione a classe do voo que deseja:");
-            System.out.println("1.Econômica\n2.Premium economy\n3.Executiva/Business\n4.Primeira Classe");
-            int opcao = sc.nextInt();
-
-            switch (opcao) {
-                case 1:
-                    horario.setClasseVoo("Econômica");
-                    break;
-
-                case 2:
-                    horario.setClasseVoo("Premium economy");
-                    break;
-
-                case 3:
-                    horario.setClasseVoo("Executiva/Business");
-                    break;
-
-                case 4:
-                    horario.setClasseVoo("Primeira Classe");
-                    break;
-
-                default:
-                    System.out.println("Opção selecionada Invalid");
-            }
-
-            System.out.println(horario);
-        } else {
-            System.out.println("Selecione novamente!");
-        }
-
+        /* horario.opcaoViagem();
+        System.out.println(horario);
+        */
+        rota.rotasViagem();
+        System.out.println(rota);
+        /*
         //Inserir dados Pessoa
         System.out.println("Digite seus dados pessoais:");
         System.out.print("Name: ");
@@ -151,5 +64,7 @@ public class Main {
 
         System.out.println(pessoa);
 
+
+         */
     }
 }
