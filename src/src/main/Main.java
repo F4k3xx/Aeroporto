@@ -4,12 +4,10 @@ import br.com.fag.entities.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
-
 
     public static void main(String[] args) throws ParseException {
 
@@ -21,6 +19,7 @@ public class Main {
 
         //Endereco Aeroporto
         Endereco enderecoAeroporto = new Endereco(22L, "Av. Itelo Webber", "Santos Dumont", "Cascavel", "Paraná", "Brasil");
+
         //Aeroporo
         Aeroporto aeroporto = new Aeroporto(22L, "SIGLA", enderecoAeroporto);
         System.out.println(aeroporto);
@@ -31,53 +30,60 @@ public class Main {
         //Horário
         Horario horario = new Horario();
 
-        //Passageiro
-        Passageiro passageiro = new Passageiro();
-
         //Bilhete
-        Bilhete bilhete = new Bilhete();
+        Bilhete bilhete = new Bilhete(2);
 
+        //Bagagem
+        Bagagem bagagem = new Bagagem();
 
-        horario.opcaoViagem();
-        System.out.println(horario);
-        rota.rotasViagem();
-        System.out.println(rota);
+        //Endereco
+        Endereco endereco = new Endereco();
 
-        //Inserir dados Pessoa
-        System.out.println("Digite seus dados pessoais:");
-        System.out.print("Name: ");
-        String name = sc.next();
-        System.out.print("Email: ");
-        String email = sc.next();
-        System.out.print("Telefone: ");
-        String telefone = sc.next();
-        //Insirir a data de acordo com o formato!
-        System.out.print("Birth date (DD/MM/YYYY): ");
-        Date nascimento = sdf.parse(sc.next());
-        System.out.print("Rg: ");
-        String rg = sc.next();
-        System.out.print("Cpf: ");
-        String cpf = sc.next();
+        System.out.println("Digite seu endereço: ");
 
         //Inserir dados Endereço
         System.out.print("Logradouro: ");
-        String logradouro = sc.next();
+        endereco.setLogradouro(sc.next());
         System.out.print("Bairro: ");
-        String bairro = sc.next();
+        endereco.setBairro(sc.next());
         System.out.print("Cidade: ");
-        String cidade = sc.next();
+        endereco.setCidade(sc.next());
         System.out.print("Estado: ");
-        String estado = sc.next();
+        endereco.setEstado(sc.next());
         System.out.print("Pais; ");
-        String pais = sc.next();
+        endereco.setPais(sc.next());
 
+        Passageiro passageiroPessoa = new Passageiro();
+        //Passando endero para peassageiroPessoa
+        passageiroPessoa.setEndereco(endereco);
 
-        Endereco endereco = new Endereco(1L, logradouro, bairro, cidade, estado, pais);
+        System.out.println("Digite seus dados pessoais:");
+        System.out.print("Name: ");
+        passageiroPessoa.setNome(sc.next());
+        System.out.print("Email: ");
+        passageiroPessoa.setEmail(sc.next());
+        System.out.print("Telefone: ");
+        passageiroPessoa.setTelefone(sc.next());
+        //Insirir a data de acordo com o formato!
+        System.out.print("Birth date (DD/MM/YYYY): ");
+        passageiroPessoa.dateNascimento(sdf.parse(sc.next()));
+        System.out.print("Rg: ");
+        passageiroPessoa.setRg(sc.next());
+        System.out.print("Cpf: ");
+        passageiroPessoa.setCpf(sc.next());
 
-        Pessoa pessoa = new Pessoa(11L, name, email, telefone, nascimento, rg, cpf, endereco);
+        //Chamada de metodos
+        horario.opcaoViagem();
+        rota.rotasViagem();
+        passageiroPessoa.insirirPassaporte();
+        bagagem.calculaPeso();
+
 
         System.out.println("Dados Insiridos: ");
-        System.out.println(pessoa);
+        System.out.println(passageiroPessoa);
+        System.out.println(horario);
+        System.out.println(rota);
+        System.out.println(bagagem);
 
 
     }

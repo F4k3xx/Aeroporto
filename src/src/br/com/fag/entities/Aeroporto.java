@@ -12,6 +12,14 @@ public class Aeroporto {
         this.endereco = endereco;
     }
 
+    public Long getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Long codigo) {
+        this.codigo = codigo;
+    }
+
     public String getSigla() {
         return sigla;
     }

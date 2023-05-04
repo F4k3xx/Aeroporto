@@ -4,19 +4,28 @@ public class Aviao {
 
     private Long codigo;
     private Double carga;
-    private Horario quantidadeEconomica;
-    private Horario qunatidadeExecutiva;
-    private Horario quantidadePrimeira;
+
+    private int[] quantidadeEconomica = new int[10];
+    private int[] quantidadeExecutiva = new int[10];
+    private int[] quantidadePrimeira = new int[10];
 
     public Aviao() {
     }
 
-    public Aviao(Long codigo, Double carga, Horario quantidadeEconomica, Horario qunatidadeExecutiva, Horario quantidadePrimeira) {
+    public Aviao(Long codigo, Double carga, int[] quantidadeEconomica, int[] quantidadeExecutiva, int[] quantidadePrimeira) {
         this.codigo = codigo;
         this.carga = carga;
         this.quantidadeEconomica = quantidadeEconomica;
-        this.qunatidadeExecutiva = qunatidadeExecutiva;
+        this.quantidadeExecutiva = quantidadeExecutiva;
         this.quantidadePrimeira = quantidadePrimeira;
+    }
+
+    public Long getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Long codigo) {
+        this.codigo = codigo;
     }
 
     public Double getCarga() {
@@ -27,27 +36,27 @@ public class Aviao {
         this.carga = carga;
     }
 
-    public Horario getQuantidadeEconomica() {
+    public int[] getQuantidadeEconomica() {
         return quantidadeEconomica;
     }
 
-    public void setQuantidadeEconomica(Horario quantidadeEconomica) {
+    public void setQuantidadeEconomica(int[] quantidadeEconomica) {
         this.quantidadeEconomica = quantidadeEconomica;
     }
 
-    public Horario getQunatidadeExecutiva() {
-        return qunatidadeExecutiva;
+    public int[] getQuantidadeExecutiva() {
+        return quantidadeExecutiva;
     }
 
-    public void setQunatidadeExecutiva(Horario qunatidadeExecutiva) {
-        this.qunatidadeExecutiva = qunatidadeExecutiva;
+    public void setQuantidadeExecutiva(int[] quantidadeExecutiva) {
+        this.quantidadeExecutiva = quantidadeExecutiva;
     }
 
-    public Horario getQuantidadePrimeira() {
+    public int[] getQuantidadePrimeira() {
         return quantidadePrimeira;
     }
 
-    public void setQuantidadePrimeira(Horario quantidadePrimeira) {
+    public void setQuantidadePrimeira(int[] quantidadePrimeira) {
         this.quantidadePrimeira = quantidadePrimeira;
     }
 }

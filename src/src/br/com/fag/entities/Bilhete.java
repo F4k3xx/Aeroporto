@@ -8,6 +8,10 @@ public class Bilhete {
     private Horario horario;
     private SituaçãoBilete situacao;
 
+    public Bilhete(int numero){
+        this.numero = numero;
+    }
+
     public Bilhete(int numero, int assento, Passageiro passagero, Horario horario, SituaçãoBilete situacao) {
         this.numero = numero;
         this.assento = assento;
