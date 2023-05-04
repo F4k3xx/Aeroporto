@@ -79,11 +79,13 @@ public class Main {
         bagagem.calculaPeso();
 
 
-        System.out.println("Dados Insiridos: ");
+        System.out.println("Dados Inseridos: ");
 //        System.out.println(passageiroPessoa);
         System.out.println(horario);
         System.out.println(rota);
         System.out.println(bagagem);
+        System.out.println(horario.getValorClasseVoo() + rota.getValorPassagem() + bagagem.getValorBagagem());
+
 
     }
 }

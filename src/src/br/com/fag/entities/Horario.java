@@ -130,8 +130,6 @@ public class Horario {
 
         setClasseVoo(classeVoo[respostaClasseVooSelecionado]);
         calculoValorTotalClassevoo(respostaClasseVooSelecionado);
-
-
     }
 
     public void calculoValorTotalClassevoo(int opcaoSelecionadaClasseVoo) {

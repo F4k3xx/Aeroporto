@@ -3,7 +3,6 @@ package br.com.fag.entities;
 import java.util.*;
 
 public class Rota {
-
     private Long codigo;
     private String descricao;
     private int valorPassagem;
@@ -46,6 +45,7 @@ public class Rota {
         setDescricao(estado[respostaEstadoSelecionados]);
 
         calculaValorPassagem(respostaEstadoSelecionados);
+
     }
 
     public void calculaValorPassagem(int respostaEstadoSelecionados) {

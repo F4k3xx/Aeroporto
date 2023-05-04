@@ -28,7 +28,7 @@ public class Bagagem {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Insira o peso da sua bagagem em kg: ");
+        System.out.println("Insira o peso da sua bagagem em kg: ");
         double peso = sc.nextDouble();
         setPeso(peso);
 
