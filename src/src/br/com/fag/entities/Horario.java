@@ -9,6 +9,8 @@ public class Horario {
     private String dataPartida;
     private String dataVolta;
     private String classeVoo;
+
+    private int valorClasseVoo;
     private int escolhaOpcao;
 
     public Horario() {
@@ -127,7 +129,27 @@ public class Horario {
         respostaClasseVooSelecionado = sc.nextInt();
 
         setClasseVoo(classeVoo[respostaClasseVooSelecionado]);
+        calculoValorTotalClassevoo(respostaClasseVooSelecionado);
 
+
+    }
+
+    public void calculoValorTotalClassevoo(int opcaoSelecionadaClasseVoo) {
+
+        switch (opcaoSelecionadaClasseVoo) {
+            case 0:
+                setValorClasseVoo(100);
+                break;
+            case 1:
+                setValorClasseVoo(200);
+                break;
+            case 2:
+                setValorClasseVoo(300);
+                break;
+            case 3:
+                setValorClasseVoo(400);
+                break;
+        }
     }
 
     /*Deixar guardada para quando precisar kk
@@ -170,15 +192,25 @@ public class Horario {
         this.classeVoo = classeVoo;
     }
 
+    public int getValorClasseVoo() {
+        return valorClasseVoo;
+    }
+
+    public void setValorClasseVoo(int valorClasseVoo) {
+        this.valorClasseVoo = valorClasseVoo;
+    }
+
     @Override
     public String toString() {
         if (escolhaOpcao == 1) {
             return "DataPartida: " + getDataPartida()
                     + "\ndataVolta: " + getdataVolta()
-                    + "\nClasseVoo: " + getClasseVoo();
+                    + "\nClasseVoo: " + getClasseVoo()
+                    + "\nValor classe: " + getValorClasseVoo();
         } else {
             return "\nDataPartida: " + getDataPartida()
-                    + "\nClasseVoo: " + getClasseVoo();
+                    + "\nClasseVoo: " + getClasseVoo()
+                    + "\nValor classe: " + getValorClasseVoo();
         }
     }
 }

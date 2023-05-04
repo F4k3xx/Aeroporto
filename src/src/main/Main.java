@@ -39,52 +39,51 @@ public class Main {
         //Endereco
         Endereco endereco = new Endereco();
 
-        System.out.println("Digite seu endereço: ");
-
-        //Inserir dados Endereço
-        System.out.print("Logradouro: ");
-        endereco.setLogradouro(sc.next());
-        System.out.print("Bairro: ");
-        endereco.setBairro(sc.next());
-        System.out.print("Cidade: ");
-        endereco.setCidade(sc.next());
-        System.out.print("Estado: ");
-        endereco.setEstado(sc.next());
-        System.out.print("Pais; ");
-        endereco.setPais(sc.next());
-
-        Passageiro passageiroPessoa = new Passageiro();
-        //Passando endero para peassageiroPessoa
-        passageiroPessoa.setEndereco(endereco);
-
-        System.out.println("Digite seus dados pessoais:");
-        System.out.print("Name: ");
-        passageiroPessoa.setNome(sc.next());
-        System.out.print("Email: ");
-        passageiroPessoa.setEmail(sc.next());
-        System.out.print("Telefone: ");
-        passageiroPessoa.setTelefone(sc.next());
-        //Insirir a data de acordo com o formato!
-        System.out.print("Birth date (DD/MM/YYYY): ");
-        passageiroPessoa.dateNascimento(sdf.parse(sc.next()));
-        System.out.print("Rg: ");
-        passageiroPessoa.setRg(sc.next());
-        System.out.print("Cpf: ");
-        passageiroPessoa.setCpf(sc.next());
+//        System.out.println("Digite seu endereço: ");
+//
+//        //Inserir dados Endereço
+//        System.out.print("Logradouro: ");
+//        endereco.setLogradouro(sc.next());
+//        System.out.print("Bairro: ");
+//        endereco.setBairro(sc.next());
+//        System.out.print("Cidade: ");
+//        endereco.setCidade(sc.next());
+//        System.out.print("Estado: ");
+//        endereco.setEstado(sc.next());
+//        System.out.print("Pais; ");
+//        endereco.setPais(sc.next());
+//
+//        Passageiro passageiroPessoa = new Passageiro();
+//        //Passando endero para peassageiroPessoa
+//        passageiroPessoa.setEndereco(endereco);
+//
+//        System.out.println("Digite seus dados pessoais:");
+//        System.out.print("Name: ");
+//        passageiroPessoa.setNome(sc.next());
+//        System.out.print("Email: ");
+//        passageiroPessoa.setEmail(sc.next());
+//        System.out.print("Telefone: ");
+//        passageiroPessoa.setTelefone(sc.next());
+//        //Insirir a data de acordo com o formato!
+//        System.out.print("Birth date (DD/MM/YYYY): ");
+//        passageiroPessoa.dateNascimento(sdf.parse(sc.next()));
+//        System.out.print("Rg: ");
+//        passageiroPessoa.setRg(sc.next());
+//        System.out.print("Cpf: ");
+//        passageiroPessoa.setCpf(sc.next());
 
         //Chamada de metodos
         horario.opcaoViagem();
         rota.rotasViagem();
-        passageiroPessoa.insirirPassaporte();
+//        passageiroPessoa.insirirPassaporte();
         bagagem.calculaPeso();
 
 
         System.out.println("Dados Insiridos: ");
-        System.out.println(passageiroPessoa);
+//        System.out.println(passageiroPessoa);
         System.out.println(horario);
         System.out.println(rota);
         System.out.println(bagagem);
-
 
     }
 }

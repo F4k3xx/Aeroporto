@@ -6,6 +6,8 @@ public class Rota {
 
     private Long codigo;
     private String descricao;
+    private int valorPassagem;
+    private Aeroporto aeroporto;
 
     public Rota() {
 
@@ -42,6 +44,48 @@ public class Rota {
         respostaEstadoSelecionados = sc.nextInt();
 
         setDescricao(estado[respostaEstadoSelecionados]);
+
+        calculaValorPassagem(respostaEstadoSelecionados);
+    }
+
+    public void calculaValorPassagem(int respostaEstadoSelecionados) {
+
+        switch (respostaEstadoSelecionados) {
+            case 0:
+                setValorPassagem(100);
+                break;
+            case 1:
+                setValorPassagem(200);
+                break;
+            case 2:
+                setValorPassagem(300);
+                break;
+            case 3:
+                setValorPassagem(400);
+                break;
+            case 4:
+                setValorPassagem(500);
+                break;
+            case 5:
+                setValorPassagem(600);
+                break;
+        }
+    }
+
+    public int getValorPassagem() {
+        return valorPassagem;
+    }
+
+    public void setValorPassagem(int valorPassagem) {
+        this.valorPassagem = valorPassagem;
+    }
+
+    public Aeroporto getAeroporto() {
+        return aeroporto;
+    }
+
+    public void setAeroporto(Aeroporto aeroporto) {
+        this.aeroporto = aeroporto;
     }
 
     public Long getCodigo() {
@@ -62,6 +106,7 @@ public class Rota {
 
     @Override
     public String toString() {
-        return "Sua rota: " + getDescricao();
+        return "\nSua rota: " + getDescricao()
+                + "\nValor rota: " + getValorPassagem();
     }
 }
