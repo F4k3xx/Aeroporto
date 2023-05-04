@@ -97,12 +97,12 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        return "\nNome: " + nome
-                + "\nEmail: " + email
-                + "\nTelefone: " + telefone
+        return "\nNome: " + getNome()
+                + "\nEmail: " + getEmail()
+                + "\nTelefone: " + getTelefone()
                 + "\nNascimento: " + dateNascimento()
-                + "\nRg: " + rg
-                + "\nCpf: " + cpf
-                + "\nEndereco: " + endereco;
+                + "\nRg: " + getRg()
+                + "\nCpf: " + getCpf()
+                + "\nEndereco: " + getEndereco();
     }
 }

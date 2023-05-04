@@ -17,18 +17,24 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
+        System.out.println("Olá seja bem vindo à Spagnol Linhas Aéreas");
+
+        Endereco enderecoAeroporto = new Endereco(22L, "Av. Itelo Webber", "Santos Dumont", "Cascavel", "Paraná", "Brasil");
+        Aeroporto aeroporto = new Aeroporto(22L, 25.0, "SIGLA", enderecoAeroporto);
+        System.out.println(aeroporto);
+
+
+
         Bilhete bilhete = new Bilhete();
         Rota rota = new Rota();
         Horario horario = new Horario();
 
-        System.out.println("Olá seja bem vindo à Spagnol Linhas Aéreas");
 
-        /* horario.opcaoViagem();
+        horario.opcaoViagem();
         System.out.println(horario);
-        */
         rota.rotasViagem();
         System.out.println(rota);
-        /*
+
         //Inserir dados Pessoa
         System.out.println("Digite seus dados pessoais:");
         System.out.print("Name: ");
@@ -62,9 +68,9 @@ public class Main {
 
         Pessoa pessoa = new Pessoa(11L, name, email, telefone, nascimento, rg, cpf, endereco);
 
+        System.out.println("Dados Insiridos: ");
         System.out.println(pessoa);
 
 
-         */
     }
 }

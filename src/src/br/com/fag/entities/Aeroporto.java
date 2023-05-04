@@ -37,4 +37,11 @@ public class Aeroporto {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
+
+    public String toString() {
+        return "\nCarga " + getCarga()
+                + "\nSigla " + getSigla()
+                + "\nEndereco " + getEndereco()
+                + "\n";
+    }
 }

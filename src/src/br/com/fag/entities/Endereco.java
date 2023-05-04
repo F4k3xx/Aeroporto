@@ -91,10 +91,10 @@ public class Endereco {
 
     @Override
     public String toString() {
-        return "\nLogradouro: " + logradouro
-                + "\nBairro: " + bairro
-                + "\nCidade:" + cidade
-                + "\nEstado: " + estado
-                + "\nPais: " + pais;
+        return "\nLogradouro: " + getLogradouro()
+                + "\nBairro: " + getBairro()
+                + "\nCidade:" + getCidade()
+                + "\nEstado: " + getEstado()
+                + "\nPais: " + getPais();
     }
 }
