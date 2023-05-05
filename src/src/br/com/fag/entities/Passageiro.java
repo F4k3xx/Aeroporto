@@ -9,7 +9,8 @@ public class Passageiro extends Pessoa {
     private Long codigo;
     private String passaporte;
 
-    public Passageiro(){}
+    public Passageiro() {
+    }
 
     public Passageiro(String nome, String email, String telefone, Date nascimento, String rg, String cpf, Endereco endereco, Long codigo, String passaporte) {
         this.codigo = codigo;
@@ -44,7 +45,13 @@ public class Passageiro extends Pessoa {
     }
 
     @Override
-    public String toString(){
-        return "\nPassaporte: " + getPassaporte();
+    public String toString() {
+        return "Passaporte: " + getPassaporte()
+                + "\nNome: " + getNome()
+                + "\nEmail: " + getEmail()
+                + "\nTelefone: " + getTelefone()
+                + "\nRg: " + getRg()
+                + "\nCpf: " + getCpf()
+                + "\nEndereco: " + getEndereco();
     }
 }

@@ -2,26 +2,38 @@ package main;
 
 import br.com.fag.entities.*;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws ParseException {
+    private static int valorTotal = 0;
+
+    public static void main(String[] args) throws InterruptedException {
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-        System.out.println("Olá seja bem vindo à Spagnol Linhas Aéreas");
+        System.out.println("==============================================");
+        System.out.println("OLÁ SEJA BEM VINDO Á SPAGNOL LINHAS AÉRIAS");
+
 
         //Endereco Aeroporto
         Endereco enderecoAeroporto = new Endereco(22L, "Av. Itelo Webber", "Santos Dumont", "Cascavel", "Paraná", "Brasil");
 
         //Aeroporo
-        Aeroporto aeroporto = new Aeroporto(22L, "SIGLA", enderecoAeroporto);
+        Aeroporto aeroporto = new Aeroporto(22L, "BR", enderecoAeroporto);
+
+        System.out.println("==============================================");
+
+        System.out.println();
+
+        System.out.println("==============================================");
+        System.out.println("ENDEREÇO AEROPORTO");
+        System.out.println("==============================================");
+
         System.out.println(aeroporto);
 
         //Rotas
@@ -39,53 +51,77 @@ public class Main {
         //Endereco
         Endereco endereco = new Endereco();
 
-//        System.out.println("Digite seu endereço: ");
-//
-//        //Inserir dados Endereço
-//        System.out.print("Logradouro: ");
-//        endereco.setLogradouro(sc.next());
-//        System.out.print("Bairro: ");
-//        endereco.setBairro(sc.next());
-//        System.out.print("Cidade: ");
-//        endereco.setCidade(sc.next());
-//        System.out.print("Estado: ");
-//        endereco.setEstado(sc.next());
-//        System.out.print("Pais; ");
-//        endereco.setPais(sc.next());
-//
-//        Passageiro passageiroPessoa = new Passageiro();
-//        //Passando endero para peassageiroPessoa
-//        passageiroPessoa.setEndereco(endereco);
-//
-//        System.out.println("Digite seus dados pessoais:");
-//        System.out.print("Name: ");
-//        passageiroPessoa.setNome(sc.next());
-//        System.out.print("Email: ");
-//        passageiroPessoa.setEmail(sc.next());
-//        System.out.print("Telefone: ");
-//        passageiroPessoa.setTelefone(sc.next());
-//        //Insirir a data de acordo com o formato!
-//        System.out.print("Birth date (DD/MM/YYYY): ");
+        System.out.println("==============================================");
+        System.out.println("DIGITE SEU ENDEREÇO: ");
+        System.out.println("==============================================");
+
+        //Inserir dados Endereço
+        System.out.print("Logradouro: ");
+        endereco.setLogradouro(sc.next());
+        System.out.print("Bairro: ");
+        endereco.setBairro(sc.next());
+        System.out.print("Cidade: ");
+        endereco.setCidade(sc.next());
+        System.out.print("Estado: ");
+        endereco.setEstado(sc.next());
+        System.out.print("Pais: ");
+        endereco.setPais(sc.next());
+
+        Passageiro passageiroPessoa = new Passageiro();
+        //Passando endero para peassageiroPessoa
+        passageiroPessoa.setEndereco(endereco);
+        System.out.println("==============================================");
+        System.out.println("DIGITE SEUS DADOS PESSOAIS:");
+        System.out.println("==============================================");
+        System.out.print("Name: ");
+        passageiroPessoa.setNome(sc.next());
+        System.out.print("Email: ");
+        passageiroPessoa.setEmail(sc.next());
+        System.out.print("Telefone: ");
+        passageiroPessoa.setTelefone(sc.next());
+        //Insirir a data de acordo com o formato!
+//        System.out.print("Data de nascimento FORMATO -> (DD/MM/YYYY): ");
 //        passageiroPessoa.dateNascimento(sdf.parse(sc.next()));
-//        System.out.print("Rg: ");
-//        passageiroPessoa.setRg(sc.next());
-//        System.out.print("Cpf: ");
-//        passageiroPessoa.setCpf(sc.next());
+        System.out.print("Rg: ");
+        passageiroPessoa.setRg(sc.next());
+        System.out.print("Cpf: ");
+        passageiroPessoa.setCpf(sc.next());
+        System.out.println("==============================================");
 
         //Chamada de metodos
         horario.opcaoViagem();
         rota.rotasViagem();
-//        passageiroPessoa.insirirPassaporte();
-        bagagem.calculaPeso();
+        bilhete.selecionarAssento();
+        passageiroPessoa.insirirPassaporte();
+        bagagem.calcularPeso();
+        valorTotal = bagagem.getValorBagagem() + horario.getValorClasseVoo() + rota.getValorPassagem();
 
-
-        System.out.println("Dados Inseridos: ");
-//        System.out.println(passageiroPessoa);
+        //DADOS DO BILHETE FINAL
+        System.out.println();
+        System.out.println("==============================================");
+        System.out.println("DADOS PASSAGEM: ");
+        System.out.println("==============================================");
+        System.out.println(passageiroPessoa);
+        System.out.println("==============================================");
+        System.out.println(bilhete);
         System.out.println(horario);
+        System.out.println("==============================================");
         System.out.println(rota);
+        System.out.println("==============================================");
         System.out.println(bagagem);
-        System.out.println(horario.getValorClasseVoo() + rota.getValorPassagem() + bagagem.getValorBagagem());
+        System.out.println("==============================================");
+        System.out.println("VALOR PASSAGEM TOTAL: " + valorTotal);
+        System.out.println("==============================================");
 
-
+        //DADOS DA COMPRA/PAGAMENTO
+        System.out.println();
+        System.out.println("==============================================");
+        System.out.println("DADOS PAGAMENTO BILHETE");
+        System.out.println("==============================================");
+        bilhete.exibirOpcoes(passageiroPessoa);
+        System.out.println();
+        System.out.println("==============================================");
+        System.out.println("BOA VIAGEM!");
+        System.out.println("==============================================");
     }
 }

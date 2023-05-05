@@ -1,75 +1,47 @@
 package br.com.fag.entities;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Rota {
+
+    private static final int[] VALORES_PASSAGEM = {100, 200, 300, 400, 500, 600};
+    private static final String[] DESCRICOES_ROTA = {
+            "0 - Tocantins -> Mato Grosso do Sul",
+            "1 - São Paulo -> Mato Grosso do Sul",
+            "2 - Minas Gerais -> Paraná",
+            "3 - Paraná -> Santa Catarina",
+            "4 - Rio de Janeiro -> Pernambuco",
+            "5 - Rio de Janeiro -> Rio Grande do Sul"
+    };
+
+    private static final Scanner SC = new Scanner(System.in);
+
     private Long codigo;
     private String descricao;
     private int valorPassagem;
     private Aeroporto aeroporto;
 
     public Rota() {
-
     }
 
-    public Rota(Long codigo, String descricao) {
+    public Rota(Long codigo, String descricao, int valorPassagem, Aeroporto aeroporto) {
+        this.codigo = codigo;
         this.descricao = descricao;
+        this.valorPassagem = valorPassagem;
+        this.aeroporto = aeroporto;
     }
 
     public void rotasViagem() {
-
-        Locale.setDefault(Locale.US);
-        Scanner sc = new Scanner(System.in);
-
-        String[] estado = new String[6];
-        int respostaEstadoSelecionados = 0;
-
-        // Adicionando os estados Brasil
-        estado[0] = ("0 - Tocantins -> Mato Grosso do Sul");
-        estado[1] = ("1 - São Paulo -> Mato Grosso do Sul");
-        estado[2] = ("2 - Minas Gerais -> Paraná");
-        estado[3] = ("3 - Paraná -> Santa Catarina");
-        estado[4] = ("4 - Rio de Janeiro -> Pernambuco ");
-        estado[5] = ("5 - Rio de Janeiro -> Rio Grande do Sul");
-
-        System.out.println("Rotas disponiveís: ");
-
-        for (String estados : estado) {
-            if (estados != null) {
-                System.out.println(estados);
-            }
+        System.out.println("Rotas disponíveis:");
+        for (String descricao : DESCRICOES_ROTA) {
+            System.out.println(descricao);
         }
-        System.out.println("Selecione sua Rota: ");
-        respostaEstadoSelecionados = sc.nextInt();
 
-        setDescricao(estado[respostaEstadoSelecionados]);
+        System.out.print("Selecione sua Rota: ");
+        int respostaEstadoSelecionado = SC.nextInt();
 
-        calculaValorPassagem(respostaEstadoSelecionados);
-
-    }
-
-    public void calculaValorPassagem(int respostaEstadoSelecionados) {
-
-        switch (respostaEstadoSelecionados) {
-            case 0:
-                setValorPassagem(100);
-                break;
-            case 1:
-                setValorPassagem(200);
-                break;
-            case 2:
-                setValorPassagem(300);
-                break;
-            case 3:
-                setValorPassagem(400);
-                break;
-            case 4:
-                setValorPassagem(500);
-                break;
-            case 5:
-                setValorPassagem(600);
-                break;
-        }
+        setDescricao(DESCRICOES_ROTA[respostaEstadoSelecionado]);
+        setValorPassagem(VALORES_PASSAGEM[respostaEstadoSelecionado]);
     }
 
     public int getValorPassagem() {
@@ -106,7 +78,9 @@ public class Rota {
 
     @Override
     public String toString() {
-        return "\nSua rota: " + getDescricao()
+        return "DADOS ROTA"
+                + "\n=============================================="
+                + "\nSua rota: " + getDescricao()
                 + "\nValor rota: " + getValorPassagem();
     }
 }

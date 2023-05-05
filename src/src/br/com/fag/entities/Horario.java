@@ -5,12 +5,18 @@ import java.util.Scanner;
 
 public class Horario {
 
+    private static final String[] DATAS_IDA = {"0 - 05/07/23", "1 - 09/08/23", "2 - 13/09/23", "3 - 17/10/23", "4 - 23/11/23", "5 - 17/12/23"};
+    private static final String[] DATAS_VOLTA = {"0 - 08/07/24", "1 - 14/08/24", "2 - 16/09/24", "3 - 20/10/24", "4 - 27/11/24", "5 - 30/12/24"};
+    private static final String[] CLASSES_VOO = {"0 - Econômica", "1 - Premium economy", "2 - Executiva/Business", "3 - Primeira Classe"};
+
+    public static Scanner sc = new Scanner(System.in);
+
     private Long codigo;
     private String dataPartida;
     private String dataVolta;
     private String classeVoo;
 
-    private int valorClasseVoo;
+    private int valorClasseVoo = 0;
     private int escolhaOpcao;
 
     public Horario() {
@@ -24,9 +30,6 @@ public class Horario {
     }
 
     public void opcaoViagem() {
-
-        Locale.setDefault(Locale.US);
-        Scanner sc = new Scanner(System.in);
 
         System.out.println("Selecione a opção desejada:");
         System.out.println("1.Ida e Volta\n2.Só Ida");
@@ -46,89 +49,46 @@ public class Horario {
 
     public void dadosDataVooIda() {
 
-        Locale.setDefault(Locale.US);
-        Scanner sc = new Scanner(System.in);
+        System.out.println("Datas disponíveis para ida: ");
 
-        String[] vetorDatasDisponiveis = new String[6];
-        int respostaDataSelecionado = 0;
-
-        // Adicionando os estados Brasil
-        vetorDatasDisponiveis[0] = ("0 - 05/07/23");
-        vetorDatasDisponiveis[1] = ("1 - 09/08/23");
-        vetorDatasDisponiveis[2] = ("2 - 13/09/23");
-        vetorDatasDisponiveis[3] = ("3 - 17/10/23");
-        vetorDatasDisponiveis[4] = ("4 - 23/11/23");
-        vetorDatasDisponiveis[5] = ("5 - 17/12/23");
-
-        System.out.println("Datas disponiveís: ");
-
-        for (String datas : vetorDatasDisponiveis) {
-            if (datas != null) {
-                System.out.println(datas);
-            }
+        for (String data : DATAS_IDA) {
+            System.out.println(data);
         }
-        System.out.println("Selecione sua Data de Ida: ");
-        respostaDataSelecionado = sc.nextInt();
 
-        setDataPartida(vetorDatasDisponiveis[respostaDataSelecionado]);
+        System.out.println("Selecione a data de ida: ");
+        int respostaDataSelecionado = sc.nextInt();
+
+        setDataPartida(DATAS_IDA[respostaDataSelecionado]);
 
     }
 
     public void dadosDataVooVolta() {
+        System.out.println("Datas disponíveis para volta: ");
 
-        Locale.setDefault(Locale.US);
-        Scanner sc = new Scanner(System.in);
-
-        String[] vetorDatasDisponiveis = new String[6];
-        int respostaDataSelecionado = 0;
-
-        // Adicionando os estados Brasil
-        vetorDatasDisponiveis[0] = ("0 - 08/07/24");
-        vetorDatasDisponiveis[1] = ("1 - 14/08/24");
-        vetorDatasDisponiveis[2] = ("2 - 16/09/24");
-        vetorDatasDisponiveis[3] = ("3 - 20/10/24");
-        vetorDatasDisponiveis[4] = ("4 - 27/11/24");
-        vetorDatasDisponiveis[5] = ("5 - 30/12/24");
-
-        System.out.println("Datas disponiveís: ");
-
-        for (String datas : vetorDatasDisponiveis) {
-            if (datas != null) {
-                System.out.println(datas);
-            }
+        for (String data : DATAS_VOLTA) {
+            System.out.println(data);
         }
-        System.out.println("Selecione sua Data de volta: ");
-        respostaDataSelecionado = sc.nextInt();
 
-        setdataVolta(vetorDatasDisponiveis[respostaDataSelecionado]);
+        System.out.println("Selecione a data de volta: ");
+        int respostaDataSelecionado = sc.nextInt();
+
+        setdataVolta(DATAS_VOLTA[respostaDataSelecionado]);
 
     }
 
     public void dadosClasseVoo() {
 
-        Locale.setDefault(Locale.US);
-        Scanner sc = new Scanner(System.in);
+        System.out.println("Classes disponíveis: ");
 
-        String[] classeVoo = new String[4];
-        int respostaClasseVooSelecionado = 0;
-
-        // Adicionando os estados Brasil
-        classeVoo[0] = ("0 - Econômica");
-        classeVoo[1] = ("1 - Premium economy");
-        classeVoo[2] = ("2 - Executiva/Business");
-        classeVoo[3] = ("3 - Primeira Classe");
-
-        System.out.println("Classes disponiveís: ");
-
-        for (String datas : classeVoo) {
-            if (datas != null) {
-                System.out.println(datas);
-            }
+        for (String classe : CLASSES_VOO) {
+            System.out.println(classe);
         }
-        System.out.println("Selecione sua classe: ");
-        respostaClasseVooSelecionado = sc.nextInt();
 
-        setClasseVoo(classeVoo[respostaClasseVooSelecionado]);
+        System.out.println("Selecione a classe: ");
+        int respostaClasseVooSelecionado = sc.nextInt();
+
+        setClasseVoo(CLASSES_VOO[respostaClasseVooSelecionado]);
+        calculoValorTotalClassevoo(respostaClasseVooSelecionado);
         calculoValorTotalClassevoo(respostaClasseVooSelecionado);
     }
 
@@ -201,12 +161,16 @@ public class Horario {
     @Override
     public String toString() {
         if (escolhaOpcao == 1) {
-            return "DataPartida: " + getDataPartida()
+            return "DADOS HORÁRIO VOO"
+                    + "\n=============================================="
+                    + "\nDataPartida: " + getDataPartida()
                     + "\ndataVolta: " + getdataVolta()
                     + "\nClasseVoo: " + getClasseVoo()
                     + "\nValor classe: " + getValorClasseVoo();
         } else {
-            return "\nDataPartida: " + getDataPartida()
+            return "DADOS HORÁRIO VOO"
+                    + "\n=============================================="
+                    + "\nDataPartida: " + getDataPartida()
                     + "\nClasseVoo: " + getClasseVoo()
                     + "\nValor classe: " + getValorClasseVoo();
         }

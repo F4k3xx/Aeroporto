@@ -1,10 +1,7 @@
 package br.com.fag.entities;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
-import java.util.Scanner;
 
 public class Pessoa {
 
@@ -17,10 +14,9 @@ public class Pessoa {
     private String cpf;
     private Endereco endereco;
 
-    public Pessoa() {
-    }
+    public Pessoa() {}
 
-    public Pessoa(Endereco endereco){
+    public Pessoa(Endereco endereco) {
         this.endereco = endereco;
     }
 
@@ -35,13 +31,16 @@ public class Pessoa {
         this.endereco = endereco;
     }
 
-    public String dateNascimento(Date nascimento) {
-        String dateNascimentoFomat = new SimpleDateFormat("yyyy-MM-dd").format(nascimento);
-        return dateNascimentoFomat;
+    public String getDateNascimento() {
+        return new SimpleDateFormat("yyyy-MM-dd").format(nascimento);
     }
 
     public Long getCodigo() {
         return codigo;
+    }
+
+    public void setCodigo(Long codigo) {
+        this.codigo = codigo;
     }
 
     public String getNome() {
@@ -49,7 +48,7 @@ public class Pessoa {
     }
 
     public void setNome(String nome) {
-        this.nome = this.nome;
+        this.nome = nome;
     }
 
     public String getEmail() {
@@ -57,7 +56,7 @@ public class Pessoa {
     }
 
     public void setEmail(String email) {
-        this.email = this.email;
+        this.email = email;
     }
 
     public String getTelefone() {
@@ -65,7 +64,7 @@ public class Pessoa {
     }
 
     public void setTelefone(String telefone) {
-        this.telefone = this.telefone;
+        this.telefone = telefone;
     }
 
     public Date getNascimento() {
@@ -73,7 +72,7 @@ public class Pessoa {
     }
 
     public void setNascimento(Date nascimento) {
-        this.nascimento = this.nascimento;
+        this.nascimento = nascimento;
     }
 
     public String getRg() {
@@ -81,7 +80,7 @@ public class Pessoa {
     }
 
     public void setRg(String rg) {
-        this.rg = this.rg;
+        this.rg = rg;
     }
 
     public String getCpf() {
@@ -89,7 +88,7 @@ public class Pessoa {
     }
 
     public void setCpf(String cpf) {
-        this.cpf = this.cpf;
+        this.cpf = cpf;
     }
 
     public Endereco getEndereco() {
@@ -105,7 +104,7 @@ public class Pessoa {
         return "\nNome: " + getNome()
                 + "\nEmail: " + getEmail()
                 + "\nTelefone: " + getTelefone()
-                + "\nNascimento: " + dateNascimento(nascimento)
+                + "\nNascimento: " + getDateNascimento()
                 + "\nRg: " + getRg()
                 + "\nCpf: " + getCpf()
                 + "\nEndereco: " + getEndereco();

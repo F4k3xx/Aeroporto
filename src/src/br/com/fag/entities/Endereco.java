@@ -1,10 +1,10 @@
 package br.com.fag.entities;
 
-import java.text.SimpleDateFormat;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Endereco {
+
+    private static final Scanner sc = new Scanner(System.in);
 
     private Long codigo;
     private String logradouro;
@@ -13,8 +13,7 @@ public class Endereco {
     private String estado;
     private String pais;
 
-    public Endereco() {
-    }
+    public Endereco() {}
 
     public Endereco(Long codigo, String logradouro, String bairro, String cidade, String estado, String pais) {
         this.codigo = codigo;
@@ -25,24 +24,17 @@ public class Endereco {
         this.pais = pais;
     }
 
-    public void dadosEndereco(Endereco endereco) {
-
-        Locale.setDefault(Locale.US);
-        Scanner sc = new Scanner(System.in);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-
-        //Inserir dados Endereço
+    public void inserirDados() {
         System.out.println("Logradouro: ");
-        endereco.setLogradouro(sc.next());
+        setLogradouro(sc.next());
         System.out.println("Bairro: ");
-        endereco.setBairro(sc.next());
+        setBairro(sc.next());
         System.out.println("Cidade: ");
-        endereco.setCidade(sc.next());
+        setCidade(sc.next());
         System.out.println("Estado: ");
-        endereco.setEstado(sc.next());
-        System.out.println("Pais; ");
-        endereco.setPais(sc.next());
-        System.out.println(this);
+        setEstado(sc.next());
+        System.out.println("País: ");
+        setPais(sc.next());
     }
 
     public Long getCodigo() {
@@ -93,8 +85,8 @@ public class Endereco {
     public String toString() {
         return "\nLogradouro: " + getLogradouro()
                 + "\nBairro: " + getBairro()
-                + "\nCidade:" + getCidade()
+                + "\nCidade: " + getCidade()
                 + "\nEstado: " + getEstado()
-                + "\nPais: " + getPais();
+                + "\nPaís: " + getPais();
     }
 }
