@@ -57,15 +57,15 @@ public class Main {
 
         //Inserir dados Endereço
         System.out.print("Logradouro: ");
-        endereco.setLogradouro(sc.next());
+        endereco.setLogradouro(sc.nextLine());
         System.out.print("Bairro: ");
-        endereco.setBairro(sc.next());
+        endereco.setBairro(sc.nextLine());
         System.out.print("Cidade: ");
-        endereco.setCidade(sc.next());
+        endereco.setCidade(sc.nextLine());
         System.out.print("Estado: ");
-        endereco.setEstado(sc.next());
+        endereco.setEstado(sc.nextLine());
         System.out.print("Pais: ");
-        endereco.setPais(sc.next());
+        endereco.setPais(sc.nextLine());
 
         Passageiro passageiroPessoa = new Passageiro();
         //Passando endero para peassageiroPessoa
@@ -74,18 +74,18 @@ public class Main {
         System.out.println("DIGITE SEUS DADOS PESSOAIS:");
         System.out.println("==============================================");
         System.out.print("Name: ");
-        passageiroPessoa.setNome(sc.next());
+        passageiroPessoa.setNome(sc.nextLine());
         System.out.print("Email: ");
-        passageiroPessoa.setEmail(sc.next());
+        passageiroPessoa.setEmail(sc.nextLine());
         System.out.print("Telefone: ");
-        passageiroPessoa.setTelefone(sc.next());
+        passageiroPessoa.setTelefone(sc.nextLine());
         //Insirir a data de acordo com o formato!
 //        System.out.print("Data de nascimento FORMATO -> (DD/MM/YYYY): ");
 //        passageiroPessoa.dateNascimento(sdf.parse(sc.next()));
         System.out.print("Rg: ");
-        passageiroPessoa.setRg(sc.next());
+        passageiroPessoa.setRg(sc.nextLine());
         System.out.print("Cpf: ");
-        passageiroPessoa.setCpf(sc.next());
+        passageiroPessoa.setCpf(sc.nextLine());
         System.out.println("==============================================");
 
         //Chamada de metodos

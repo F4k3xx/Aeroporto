@@ -27,6 +27,7 @@ public class Bilhete {
     }
 
     public void selecionarAssento() {
+        System.out.println("\n==============================================");
         System.out.println("Temos 100 Assento");
         System.out.println("Selecione 1:");
         int assentoSelecionado = sc.nextInt();
