@@ -1,11 +1,18 @@
 package br.com.fag.entities;
 
 public class Cargo {
+    private static final String[] cargosColaborados = {
+            "0 - Piloto",
+            "1 - Comissário de Vool",
+            "2 - Segurança",
+    };
 
     private Long codigo;
-    private CompanhiaAerea descricao;
+    private String descricao;
 
-    public Cargo(Long codigo, CompanhiaAerea descricao) {
+    private CompanhiaAerea companhiaAerea;
+
+    public Cargo(Long codigo, String descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
     }
@@ -18,11 +25,11 @@ public class Cargo {
         this.codigo = codigo;
     }
 
-    public CompanhiaAerea getDescricao() {
+    public String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(CompanhiaAerea descricao) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 }

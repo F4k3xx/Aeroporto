@@ -2,6 +2,7 @@ package main;
 
 import br.com.fag.entities.*;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 import java.util.Scanner;
@@ -10,15 +11,20 @@ public class Main {
 
     private static int valorTotal = 0;
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, ParseException {
 
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
+        //Companhia Aerea
+        CompanhiaAerea companhiaAerea = new CompanhiaAerea(1223L, "COMPANHIA SPAGNOL");
+
+        //Cargo
+        Cargo cargo = new Cargo(22L, "Piloto" );
+
         System.out.println("==============================================");
         System.out.println("OLÁ SEJA BEM VINDO Á SPAGNOL LINHAS AÉRIAS");
-
 
         //Endereco Aeroporto
         Endereco enderecoAeroporto = new Endereco(22L, "Av. Itelo Webber", "Santos Dumont", "Cascavel", "Paraná", "Brasil");
@@ -80,8 +86,8 @@ public class Main {
         System.out.print("Telefone: ");
         passageiroPessoa.setTelefone(sc.nextLine());
         //Insirir a data de acordo com o formato!
-//        System.out.print("Data de nascimento FORMATO -> (DD/MM/YYYY): ");
-//        passageiroPessoa.dateNascimento(sdf.parse(sc.next()));
+        System.out.print("Data de nascimento FORMATO -> (DD/MM/YYYY): ");
+        passageiroPessoa.dateNascimento(sdf.parse(sc.nextLine()));
         System.out.print("Rg: ");
         passageiroPessoa.setRg(sc.nextLine());
         System.out.print("Cpf: ");
@@ -89,8 +95,8 @@ public class Main {
         System.out.println("==============================================");
 
         //Chamada de metodos
-        horario.opcaoViagem();
         rota.rotasViagem();
+        horario.opcaoViagem();
         bilhete.selecionarAssento();
         passageiroPessoa.insirirPassaporte();
         bagagem.calcularPeso();
@@ -101,9 +107,9 @@ public class Main {
         System.out.println("==============================================");
         System.out.println("DADOS PASSAGEM: ");
         System.out.println("==============================================");
+        System.out.println(bilhete);
         System.out.println(passageiroPessoa);
         System.out.println("==============================================");
-        System.out.println(bilhete);
         System.out.println(horario);
         System.out.println("==============================================");
         System.out.println(rota);

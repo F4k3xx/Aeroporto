@@ -89,7 +89,6 @@ public class Horario {
 
         setClasseVoo(CLASSES_VOO[respostaClasseVooSelecionado]);
         calculoValorTotalClassevoo(respostaClasseVooSelecionado);
-        calculoValorTotalClassevoo(respostaClasseVooSelecionado);
     }
 
     public void calculoValorTotalClassevoo(int opcaoSelecionadaClasseVoo) {

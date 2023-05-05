@@ -28,8 +28,8 @@ public class Bilhete {
 
     public void selecionarAssento() {
         System.out.println("\n==============================================");
-        System.out.println("Temos 100 Assento");
-        System.out.println("Selecione 1:");
+        System.out.println("Temos 100 Assento disponiveis");
+        System.out.println("Insira o assento que deseja:");
         int assentoSelecionado = sc.nextInt();
 
         setAssento(assentoSelecionado);

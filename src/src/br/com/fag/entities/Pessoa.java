@@ -31,6 +31,11 @@ public class Pessoa {
         this.endereco = endereco;
     }
 
+    public String dateNascimento(Date nascimento) {
+        String dateNascimentoFomat = new SimpleDateFormat("yyyy-MM-dd").format(nascimento);
+        return dateNascimentoFomat;
+    }
+
     public String getDateNascimento() {
         return new SimpleDateFormat("yyyy-MM-dd").format(nascimento);
     }

@@ -8,17 +8,17 @@ public class Funcionario extends Pessoa{
     private int contaCorrente;
     private Cargo cargo;
 
-    public Funcionario(Long codigo, int contaCorrente, Cargo cargo) {
-        this.codigo = codigo;
-        this.contaCorrente = contaCorrente;
+    public Funcionario (Cargo cargo){
         this.cargo = cargo;
     }
-
     public Funcionario(Long codigo, String nome, String email, String telefone, Date nascimento, String rg, String cpf, Endereco endereco, Long codigo1, int contaCorrente, Cargo cargo) {
         super(codigo, nome, email, telefone, nascimento, rg, cpf, endereco);
         this.codigo = codigo1;
         this.contaCorrente = contaCorrente;
         this.cargo = cargo;
+    }
+
+    public Funcionario(String descricao) {
     }
 
     public Long getCodigo() {
