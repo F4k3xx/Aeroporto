@@ -3,9 +3,9 @@ package br.com.fag.entities;
 public class SituaçãoBilete {
 
     private Long codigo;
-    private String descricao;
+    private Bilhete descricao;
 
-    public SituaçãoBilete(Long codigo, String descricao) {
+    public SituaçãoBilete(Long codigo, Bilhete descricao) {
         this.codigo = codigo;
         this.descricao = descricao;
     }
@@ -18,11 +18,11 @@ public class SituaçãoBilete {
         this.codigo = codigo;
     }
 
-    public String getDescricao() {
+    public Bilhete getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
+    public void setDescricao(Bilhete descricao) {
         this.descricao = descricao;
     }
 }

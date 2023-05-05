@@ -9,7 +9,7 @@ public class Bilhete {
     private int assento;
     private Passageiro passagero;
     private Horario horario;
-    private SituaçãoBilete situacao;
+    private Bagagem bagagem;
 
     public Bilhete() {
     }
@@ -18,12 +18,11 @@ public class Bilhete {
         this.numero = numero;
     }
 
-    public Bilhete(int numero, int assento, Passageiro passagero, Horario horario, SituaçãoBilete situacao) {
+    public Bilhete(int numero, int assento, Passageiro passagero, Bagagem bagagem) {
         this.numero = numero;
         this.assento = assento;
         this.passagero = passagero;
         this.horario = horario;
-        this.situacao = situacao;
     }
 
     public void selecionarAssento() {
@@ -186,20 +185,12 @@ public class Bilhete {
         this.passagero = passagero;
     }
 
-    public Horario getHorario() {
-        return horario;
+    public Bagagem getBagagem() {
+        return bagagem;
     }
 
-    public void setHorario(Horario horario) {
-        this.horario = horario;
-    }
-
-    public SituaçãoBilete getSituacao() {
-        return situacao;
-    }
-
-    public void setSituacao(SituaçãoBilete situacao) {
-        this.situacao = situacao;
+    public void setBagagem(Bagagem bagagem) {
+        this.bagagem = bagagem;
     }
 
     @Override

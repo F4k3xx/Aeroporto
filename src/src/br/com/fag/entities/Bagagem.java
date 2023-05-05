@@ -10,7 +10,6 @@ public class Bagagem {
     private String tipo;
     private Double peso;
     private int valorBagagem;
-    private Bilhete bilhete;
 
     public Bagagem() {
     }
@@ -20,7 +19,6 @@ public class Bagagem {
         this.tipo = tipo;
         this.peso = peso;
         this.valorBagagem = valorBagagem;
-        this.bilhete = bilhete;
     }
 
     public void calcularPeso() {
@@ -61,14 +59,6 @@ public class Bagagem {
 
     public void setValorBagagem(int valorBagagem) {
         this.valorBagagem = valorBagagem;
-    }
-
-    public Bilhete getBilhete() {
-        return bilhete;
-    }
-
-    public void setBilhete(Bilhete bilhete) {
-        this.bilhete = bilhete;
     }
 
     @Override

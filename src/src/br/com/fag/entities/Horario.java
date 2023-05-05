@@ -16,6 +16,9 @@ public class Horario {
     private String dataVolta;
     private String classeVoo;
 
+    private Rota rota;
+    private Aviao aviao;
+
     private int valorClasseVoo = 0;
     private int escolhaOpcao;
 
